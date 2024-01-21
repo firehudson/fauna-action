@@ -12,6 +12,9 @@ inputs:
   fauna-secret-key:
     description: 'Secret key for Fauna DB'
     required: true
+  schema-directory:
+    required: false
+    default: './'
 
 outputs:
   test-result:
@@ -37,25 +40,5 @@ runs:
       shell: bash
 
     - name: Push schema to Database
-      run: fauna schema push --force --secret ${{ inputs.fauna-secret-key }}
+      run: fauna schema push --force --secret ${{ inputs.fauna-secret-key }} --dir ${{ inputs.schema-directory }}
       shell: bash
-
-    - name: Run tests
-      run: npm test
-      id: test
-      continue-on-error: true
-      shell: bash
-
-    - name: Reset Test Database
-      run: fauna schema push --dir=./cleanup/ --force --secret ${{ inputs.fauna-secret-key }}
-      shell: bash
-
-    - name: Set Test Result Output
-      run: |
-        if [ "${{ steps.test.outcome }}" = "success" ]; then
-          echo "::set-output name=test-result::success"
-        else
-          echo "::set-output name=test-result::failure"
-        fi
-      shell: bash
-

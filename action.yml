@@ -51,8 +51,9 @@ runs:
       shell: bash
 
     - name: Set Test Result Output
-      if: steps.test.outcome == 'success'
-      run: echo "::set-output name=test-result::success"
-      if: steps.test.outcome != 'success'
-      run: echo "::set-output name=test-result::failure"
-      shell: bash
+      run: |
+      if [ "${{ steps.test.outcome }}" == "success" ]; then
+        echo "::set-output name=test-result::success"
+      else
+        echo "::set-output name=test-result::failure"
+      fi

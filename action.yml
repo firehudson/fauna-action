@@ -4,10 +4,6 @@ author: Fauna Labs
 branding:
   icon: 'database'
   color: 'purple'
-runs:
-  using: 'node20'
-  main: 'main.js'
-
 inputs:
   node-version:
     description: 'Node.js version to use'

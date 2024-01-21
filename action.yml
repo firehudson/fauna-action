@@ -30,23 +30,29 @@ runs:
 
     - name: Install dependencies
       run: npm install
+      shell: bash
 
     - name: Install Fauna CLI
       run: npm install -g fauna-shell
+      shell: bash
 
     - name: Push schema to Database
       run: fauna schema push --force --secret ${{ inputs.fauna-secret-key }}
+      shell: bash
 
     - name: Run tests
       run: npm test
       id: test
       continue-on-error: true
+      shell: bash
 
     - name: Reset Test Database
       run: fauna schema push --dir=./cleanup/ --force --secret ${{ inputs.fauna-secret-key }}
+      shell: bash
 
     - name: Set Test Result Output
       if: steps.test.outcome == 'success'
       run: echo "::set-output name=test-result::success"
       if: steps.test.outcome != 'success'
       run: echo "::set-output name=test-result::failure"
+      shell: bash

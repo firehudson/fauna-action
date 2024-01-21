@@ -1,0 +1,9 @@
+name: Fauna
+description: Github action for automating Fauna databases. 
+author: Fauna Labs
+branding:
+  icon: 'database'
+  color: 'purple'
+runs:
+  using: 'node20'
+  main: 'main.js'

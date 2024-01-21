@@ -1,4 +1,4 @@
-name: Fauna
+name: fauna_db_actions
 description: Github action for automating Fauna databases. 
 author: Fauna Labs
 branding:

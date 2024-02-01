@@ -1,5 +1,5 @@
 # Fauna Action
-This action gives you the ability to manage your Fauna resouces in the CI/CD pipeline through Fauna Schema Language. Using this action you are able to 
+This action gives you the ability to manage your Fauna resources in the CI/CD pipeline through Fauna Schema Language. Using this action you are able to 
 
 - create, update, delete databases
 - manage collections

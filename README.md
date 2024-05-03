@@ -1,3 +1,7 @@
+> This fork has been intentionally pushed to marketplace to continue development in my internal team and may not be used in production by others.
+>
+> It will be deleted from marketplace once the PR on [Shadid12/fauna-action](https://github.com/Shadid12/fauna-action/pull/1) is merged.
+
 # Fauna Action
 
 This action gives you the ability to manage your Fauna resources in the CI/CD pipeline through Fauna Schema Language. Using this action you are able to

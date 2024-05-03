@@ -1,4 +1,4 @@
-name: Fauna IaC
+name: Fauna DB IaC
 description: Github action for automating Fauna databases.
 author: Fauna Labs
 branding:
